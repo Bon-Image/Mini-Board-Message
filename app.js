@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import dotenv from 'dotenv';
-
+import { body, validationResult } from 'express-validator';
 import indexRouter from './routes/indexRouter.js';
 import newMessagesRouter from './routes/newMessageRouter.js'; 
 
