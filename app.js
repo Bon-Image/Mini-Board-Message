@@ -3,6 +3,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import dotenv from 'dotenv';
 
+import indexRouter from './routes/indexRouter.js';
+import newMessagesRouter from './routes/newMessageRouter.js'; 
+
 // Load environment variables
 dotenv.config();
 
@@ -24,10 +27,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); // Or pug, hbs, etc.
 
-// ===== Routes (Add your routers here) =====
-// Example:
-// import indexRouter from './routes/indexRouter.js';
-// app.use('/', indexRouter);
+// ===== Routes =====
+
+app.use('/', indexRouter); 
+app.use('/new', newMessagesRouter); 
+
 
 // ===== Start Server =====
 const PORT = process.env.PORT || 3000;
