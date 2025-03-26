@@ -1,0 +1,26 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Message Board</title>
+</head>
+<body>
+  <h1>Messages</h1>
+
+  <ul>
+    <% messages.forEach(message => { %>
+      <li>
+        <strong><%= message.user %></strong>: 
+        <%= message.text %> 
+        <a href="/messages/<%= message.id %>">Open</a>
+        <br>
+        <small><em>Posted on <%= message.added.toLocaleString() %></em></small>
+      </li>
+    <% }) %>
+  </ul>
+
+  <h2>Submit a New Message</h2>
+  <a href="/new"> Click Here to Submit A New Message</a>
+</body>
+</html>

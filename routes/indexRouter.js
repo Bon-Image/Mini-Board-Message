@@ -1,9 +1,10 @@
 import { Router } from 'express';
+import messages from '../database/messages.js'; 
 
 const indexRouter = Router(); 
 
 indexRouter.get('/', (req, res) => {
-    res.send("Yep, it's working, you are in the home page"); 
+    res.render('index', {title: "Mini Messageboard", messages:messages}); 
 }); 
 
 export default indexRouter; 
