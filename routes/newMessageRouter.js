@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import messages from '../database/messages.js'; 
 
 const newMessageRouter = Router(); 
 
